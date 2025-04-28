@@ -6,7 +6,10 @@ def createStory(adjective='red', noun='can', verb='running', adverb='quickly'):
 	return f"Today, I saw a {adjective} {noun} that decided to {verb} {adverb}.\nI couldn't believe my eyes!"
 
 def promptWord(word_type):
-	return input(f'Enter a {word_type}: ')
+	user_input = ""
+	while user_input == "":
+		user_input = input(f'Enter a {word_type}: ')
+	return user_input
 
 print("Welcome to Python Mad Libs!")
 print("Answer the following questions to create your very own silly story.\n")
