@@ -1,25 +1,29 @@
+
 # Python Mad Libs Warm-Up Activity
 
 # Welcome message
+def createStory(adjective='red', noun='can', verb='running', adverb='quickly'):
+	return f"Today, I saw a {adjective} {noun} that decided to {verb} {adverb}.\nI couldn't believe my eyes!"
 print("Welcome to Python Mad Libs!")
 print("Answer the following questions to create your very own silly story.\n")
+while(True):
+	# Gather user inputs
+	adjective = input("Enter an adjective: ")
+	noun = input("Enter a noun: ")
+	verb = input("Enter a verb: ")
+	adverb = input("Enter an adverb: ")
 
-# Gather user inputs
-adjective = input("Enter an adjective: ")
-noun = input("Enter a noun: ")
-verb = input("Enter a verb: ")
-adverb = input("Enter an adverb: ")
+	# Build the story using an f-string
+	story = createStory(adjective=adjective, noun=noun, verb=verb, adverb=adverb)
 
-# Build the story using an f-string
-story = (
-    f"Today, I saw a {adjective} {noun} that decided to {verb} {adverb}.\n"
-    "I couldn't believe my eyes!"
-)
+	# Display the completed story
+	print("\nHere is your story:")
+	print(story)
 
-# Display the completed story
-print("\nHere is your story:")
-print(story)
-
+	choice = input("would you like to play again?\n")
+	if choice.lower() != "yes":
+		break
+	
 #   - Which Python functions did you use to get input from the user?
 #       input() - prints a given value, then returns a user input value
 #   - How did f-string formatting help in constructing the story?
