@@ -1,32 +1,38 @@
-
+import random
 # Python Mad Libs Warm-Up Activity
 
 # Welcome message
-def createStory(adjective='red', noun='can', verb='running', adverb='quickly'):
-	return f"Today, I saw a {adjective} {noun} that decided to {verb} {adverb}.\nI couldn't believe my eyes!"
+def createStory(adjectives='red', nouns='can', verbs='running', adverbs='quickly'):
+	story = (f"Today, I saw a {random.choice(adjectives)} {random.choice(nouns)}"
+	f" that decided to {random.choice(verbs)} {random.choice(adverbs)}.\nI couldn't believe my eyes!")
+	return story
 
-def promptWord(word_type):
+def promptWords(word_type):
 	user_input = ""
 	while user_input == "":
-		user_input = input(f'Enter a {word_type}: ')
-	return user_input
+		user_input = input(f'Enter your {word_type}s: ')
+	inputs = user_input.split(',') #[input.strip() for input in user_input.split(',')]
+	trimmed_input = []
+	for inp in inputs:
+		trimmed_input.append(inp.strip())
+	return trimmed_input
 
 print("Welcome to Python Mad Libs!")
 print("Answer the following questions to create your very own silly story.\n")
 while(True):
 	# Gather user inputs
-	adjective = promptWord("adjective")
-	noun = promptWord("noun")
-	verb = promptWord("verb")
-	adverb = promptWord("adverb")
+	adjectives = promptWords("adjective")
+	nouns = promptWords("noun")
+	verbs = promptWords("verb")
+	adverbs = promptWords("adverb")
 
 	# Build the story using an f-string
-	story = createStory(adjective=adjective, noun=noun, verb=verb, adverb=adverb)
+	story = createStory(adjectives=adjectives, nouns=nouns, verbs=verbs, adverbs=adverbs)
 
 	# Display the completed story
 	print("\nHere is your story:")
 	print(story)
-
+	
 	choice = input("would you like to play again?\n")
 	if choice.lower() != "yes":
 		break
