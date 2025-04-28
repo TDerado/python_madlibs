@@ -4,14 +4,18 @@
 # Welcome message
 def createStory(adjective='red', noun='can', verb='running', adverb='quickly'):
 	return f"Today, I saw a {adjective} {noun} that decided to {verb} {adverb}.\nI couldn't believe my eyes!"
+
+def promptWord(word_type):
+	return input(f'Enter a {word_type}: ')
+
 print("Welcome to Python Mad Libs!")
 print("Answer the following questions to create your very own silly story.\n")
 while(True):
 	# Gather user inputs
-	adjective = input("Enter an adjective: ")
-	noun = input("Enter a noun: ")
-	verb = input("Enter a verb: ")
-	adverb = input("Enter an adverb: ")
+	adjective = promptWord("adjective")
+	noun = promptWord("noun")
+	verb = promptWord("verb")
+	adverb = promptWord("adverb")
 
 	# Build the story using an f-string
 	story = createStory(adjective=adjective, noun=noun, verb=verb, adverb=adverb)
