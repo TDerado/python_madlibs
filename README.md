@@ -6,5 +6,5 @@
   - using a merge for every feature helps keep  work modular as instead of working towards multiple features at once, I work to finish a feature to push to the main branch before moving onto the next one.
 4. Concepts
   - I feel better about the use of modularity and functions as I tried to keep each following part separate to follow challenge 4 (Function Refactoring) after starting with it and it helped improve my function usage, even if nothing is used twice yet, it looks better and could be update easier.
-
--(original mad_lib questio answers are in the mad_libs.py file at the end)
+5. Note
+- (original mad_lib question answers are in the mad_libs.py file at the end)
