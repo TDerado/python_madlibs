@@ -9,7 +9,7 @@ def create_story(adjectives='red', nouns='can', verbs='running', adverbs='quickl
 	f" that decided to {random.choice(verbs)} {random.choice(adverbs)}. I couldn't believe my eyes!")
 
 	story2 = (f"Traveling down the road, a {random.choice(adjectives)} {random.choice(nouns)}\n"
-	f" driving a {random.choice(nouns)} {random.choice(verbs)} past me! .\n{random.choice(adverbs)} followed by\n"
+	f" driving a {random.choice(nouns)} {random.choice(verbs)} past me! {random.choice(adverbs)} followed by\n"
 	f"a {random.choice(adjectives)} policeman {random.choice(nouns)} who {random.choice(adverbs)} chased after it.")
 	
 	story3 = (f"I went to a strange zoo, they had a {random.choice(adjectives)} {random.choice(nouns)}\n"
@@ -62,12 +62,7 @@ while(True):
 
 	# Build the story using an f-string
 	title, story = create_story(adjectives=adjectives, nouns=nouns, verbs=verbs, adverbs=adverbs)
-	sentences = story.split('\n')
 	# Display the completed story
-	length = 0
-	for sentence in sentences:
-		if len(sentence) > length:
-			length = len(sentence)
 
 	print("\nHere is your story:\n")
 	f_title, f_story = format_story(title, story)
