@@ -3,7 +3,7 @@ import random
 
 # Welcome message
 # use random words to create stories and select a random story to return with its title 
-def create_story(adjectives='red', nouns='can', verbs='running', adverbs='quickly'):
+def create_story(adjectives=['red'], nouns=['can'], verbs=['running'], adverbs=['quickly']):
 
 	story1 = (f"Today, I saw a {random.choice(adjectives)} {random.choice(nouns)}\n"
 	f" that decided to {random.choice(verbs)} {random.choice(adverbs)}. I couldn't believe my eyes!")
@@ -24,10 +24,10 @@ def prompt_words(word_type):
 	user_input = ""
 	while user_input == "":
 		user_input = input(f'Enter your {word_type}s: ')
-	inputs = user_input.split(',') #[input.strip() for input in user_input.split(',')]
-	trimmed_input = []
-	for inp in inputs:
-		trimmed_input.append(inp.strip())
+	trimmed_input = [input.strip() for input in user_input.split(',')]
+	# trimmed_input = []
+	# for inp in inputs:
+	# 	trimmed_input.append(inp.strip())
 	return trimmed_input
 
 # save the story to text file with given name
@@ -75,8 +75,8 @@ while(True):
 		save_story(f_title, f_story, filename)
 	
 	# Ask to replay
-	choice = input("would you like to play again?\n")
-	if choice.lower() != "yes":
+	choice = input("would you like to play again (yes/no)?\n")
+	if choice.lower().strip() != "yes":
 		break
 	
 #   - Which Python functions did you use to get input from the user?
